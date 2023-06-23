@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        />
+
+        <!--<link rel="stylesheet" href="css/icon-font.css">-->
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+        <title>FamBank | Debits</title>
+      </head>
+      <body>
+        <div class="warningBox" id="warningBoxEight"></div>
+    <div class="successBox" id="successBoxDebits"></div>
+        <header class="accountHeader">
+          <h1 class="accountHeader__h1" id="debitsPageName"></h1>
+          <nav class="accountHeader__nav">
+            <ul class="accountHeader__list">
+              <li class="accountHeader__item">
+                <a href="#" onclick="goHome()">Account Home</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <section class="paybills">
+          <h2
+            class="heading-secondary"
+            style="
+              font-size: 3rem;
+              margin-top: 2rem;
+              margin-bottom: 2rem;
+              margin-left: 0;
+              margin-right: 0;
+            "
+          >
+            Add Debits
+          </h2>
+          <!-- fix text fields width & position -->
+          <div class="paybills__form">
+              <div class="form__group paybillsdetailsform">
+                <input
+                  type="text"
+                  class="form__input"
+                  placeholder="Title"
+                  id="debitsTitle"
+                  required
+                />
+                <label for="debitsTitle" class="form__label"
+                  >Title</label
+                >
+              </div>
+              <div class="form__group paybillsdetailsform">
+                <input
+                  type="text"
+                  class="form__input"
+                  placeholder="Amount"
+                  id="debitsAmount"
+                  required
+                />
+                <label for="debitsAmount" class="form__label">Amount</label>
+              </div>
+              <!-- style this class="form__label"-->
+              <div class="paybillsdetailsdiv" style="margin-bottom: 2rem">
+                <input type="date" name="" class="form__input" id="endDate" required> 
+                <label for="endDate" class="signupform__label">Date Of Birth</label>
+                </div>
+              </div>
+              <!-- put this in center -->
+              <div class="form__group">
+                <button class="btn btn--green" id="others" onclick="addDebits()">Submit &rarr;</button>
+                <button class="btn btn--green" onclick="goHome()">Back &rarr;</button>
+              </div>
+          </div>
+        </section>
+        <script src="integration.js"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const name = document.getElementById('debitsPageName')
+            name.innerHTML = params.name
+          })
+          
+        </script>
+      </body>
+    </html>
+  </head>
+</html>

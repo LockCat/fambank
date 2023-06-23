@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        />
+
+        <!--<link rel="stylesheet" href="css/icon-font.css">-->
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+        <title>FamBank | Add Family Member</title>
+      </head>
+      <body>
+        <div class="warningBox" id="warningBoxTen"></div>
+    <div class="successBox" id="successBoxFamMember"></div>
+        <header class="accountHeader">
+          <h1 class="accountHeader__h1" id="FamilyMemberName"></h1>
+          <nav class="accountHeader__nav">
+            <ul class="accountHeader__list">
+              <li class="accountHeader__item">
+                <a href="#" onclick="goHome()">Account Home</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <section class="paybills">
+          <h2
+            class="heading-secondary"
+            style="
+              font-size: 3rem;
+              margin-top: 2rem;
+              margin-bottom: 2rem;
+              margin-left: 0;
+              margin-right: 0;
+            "
+          >
+            Add Family Member
+          </h2>
+          <!-- fix text fields width & position -->
+          <div class="paybills__form">
+              <div class="form__group paybillsdetailsform">
+                <input
+                  type="email"
+                  class="form__input"
+                  placeholder="New User Email"
+                  id="newUserEmail"
+                  required
+                />
+                <label for="newUserEmail" class="form__label"
+                  >New User Email</label
+                >
+              </div>
+              <div class="form__group paybillsdetailsform">
+                <input
+                  type="text"
+                  class="form__input"
+                  placeholder="Initial Balance"
+                  id="newBalance"
+                  required
+                />
+                <label for="newBalance" class="form__label">Initial Balance</label>
+              </div>
+              <!-- style this class="form__label"-->
+              <div class="paybillsdetailsdiv" style="margin-bottom: 2rem">
+                <input
+                  class="paybillsdetailsdivcheckbox"
+                  type="checkbox"
+                  id="mainStatus"
+                  name="main-status"
+                />
+                <label for="mainStatus" class="paybillsdetailsdivlabel"
+                  >Main Status</label
+                >
+              </div>
+              <!-- put this in center -->
+              <div class="form__group">
+                <button class="btn btn--green" id="others" onclick="addFamilyMember()">Submit &rarr;</button>
+                <button class="btn btn--green" onclick="goHome()">Back &rarr;</button>
+              </div>
+          </div>
+        </section>
+        <script src="integration.js"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const name = document.getElementById('FamilyMemberName')
+            name.innerHTML = params.name
+          })
+          
+        </script>
+      </body>
+    </html>
+  </head>
+</html>

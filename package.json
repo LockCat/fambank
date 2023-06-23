@@ -1,0 +1,14 @@
+{
+  "name": "fambank",
+  "version": "1.0.0",
+  "description": "Family Banking System",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "ak",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

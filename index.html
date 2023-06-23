@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-x: hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!--<link rel="stylesheet" href="css/icon-font.css">-->
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>FamBank | Manage Your Family's Finances</title>
+  </head>
+
+  <body>
+    <div class="navigation">
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
+
+      <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+      </label>
+
+      <div class="navigation__background">&nbsp;</div>
+
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="index.html#section-about" class="navigation__link"
+              ><span></span>About FamBank</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="index.html#section-features" class="navigation__link"
+              ><span></span>Your benefits</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="index.html#section-stories" class="navigation__link"
+              ><span></span>Reviews</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="signup.html" class="navigation__link"
+              ><span></span>Sign Up
+            </a>
+          </li>
+          <li class="navigation__item">
+            <a href="signin.html" class="navigation__link"
+              ><span></span>Sign In</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <header class="header">
+      <div class="bg-video">
+        <video class="bg-video__content" autoplay muted loop>
+          <source src="img/newVideo.mp4" type="video/mp4" />
+          <source src="img/newVideo.webm" type="video/webm" />
+          Your browser is not supported!
+        </video>
+      </div>
+      <div class="header__logo-box">
+        <a href="index.html" class="header__logo-link">
+          <img src="img/logo-white.png" alt="Logo" class="header__logo" />
+        </a>
+      </div>
+
+      <div class="header__text-box">
+        <h1 class="heading-primary">
+          <span class="heading-primary--main">FamBank</span>
+          <span class="heading-primary--sub"
+            >Manage Your Family's Finances in one place</span
+          >
+        </h1>
+        <div class="heading__appimg"></div>
+        <a
+          href="signin.html"
+          class="btn btn--white btn--animated"
+          style="margin-right: 2rem"
+          >Sign in</a
+        >
+        <a href="signup.html" class="btn btn--white btn--animated">Sign Up</a>
+      </div>
+      <img src="img/homeView.png" alt="Image" class="header__image" />
+    </header>
+
+    <main>
+      <section class="section-about" id="section-about">
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary">Our Unique Banking System</h2>
+        </div>
+
+        <div class="row">
+          <div class="col-1-of-2">
+            <h3 class="heading-tertiary u-margin-bottom-small">
+              Track & Manage Your Family's Financials All At Once
+            </h3>
+            <p class="paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+              ipsum sapiente aspernatur libero repellat quis consequatur ducimus
+              quam nisi exercitationem omnis earum qui.
+            </p>
+
+            <h3 class="heading-tertiary u-margin-bottom-small">
+              Make your banking experience easier than ever
+            </h3>
+            <p class="paragraph">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores nulla deserunt voluptatum nam.
+            </p>
+
+            <a href="signup.html" class="btn-text">Sign up &rarr;</a>
+          </div>
+          <div class="col-1-of-2">
+            <div class="composition">
+              <img
+                srcset="img/guyUsingApp.jpg 300w, img/guyUsingApp.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo 1"
+                class="composition__photo composition__photo--p1"
+                src="img/guyUsingApp.jpg"
+              />
+
+              <img
+                srcset="img/otherGuy.jpg 300w, img/otherGuy.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo 2"
+                class="composition__photo composition__photo--p2"
+                src="img/otherGuy.jpg"
+              />
+
+              <img
+                srcset="img/otherGuy2.jpg 300w, img/otherGuy2.jpg 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                alt="Photo 3"
+                class="composition__photo composition__photo--p3"
+                src="img/otherGuy2.jpg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-features" id="section-features">
+        <div class="row">
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i class="feature-box__icon fas fa-user"></i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Create Secondary Accounts
+              </h3>
+              <p class="feature-box__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aperiam, ipsum sapiente aspernatur.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i class="feature-box__icon fas fa-comments"></i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Chat with our 24/7 virtual helper
+              </h3>
+              <p class="feature-box__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aperiam, ipsum sapiente aspernatur.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i class="feature-box__icon fas fa-money-bill-wave"></i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Transfer money instantly
+              </h3>
+              <p class="feature-box__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aperiam, ipsum sapiente aspernatur.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-1-of-4">
+            <div class="feature-box">
+              <i class="feature-box__icon fas fa-wallet"></i>
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                Manage your stipends
+              </h3>
+              <p class="feature-box__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aperiam, ipsum sapiente aspernatur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-stories" id="section-stories">
+        <!-- <div class="bg-video">
+          <video class="bg-video__content" autoplay muted loop>
+            <source src="img/newVideo.mp4" type="video/mp4" />
+            <source src="img/newVideo.webm" type="video/webm" />
+            Your browser is not supported!
+          </video>
+        </div> -->
+
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary">We make our clients satisfied</h2>
+        </div>
+
+        <div class="row">
+          <div class="story">
+            <figure class="story__shape">
+              <img
+                src="img/nat-8.jpg"
+                alt="Person on a tour"
+                class="story__img"
+              />
+              <figcaption class="story__caption">Mary Cooper</figcaption>
+            </figure>
+            <div class="story__text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                I now have a different perspective on banking systems
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aperiam, ipsum sapiente aspernatur libero repellat quis
+                consequatur ducimus quam nisi exercitationem omnis earum qui.
+                Aperiam, ipsum sapiente aspernatur libero repellat quis
+                consequatur ducimus quam nisi exercitationem omnis earum qui.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="story">
+            <figure class="story__shape">
+              <img
+                src="img/nat-9.jpg"
+                alt="Person on a tour"
+                class="story__img"
+              />
+              <figcaption class="story__caption">Roronoa Zoro</figcaption>
+            </figure>
+            <div class="story__text">
+              <h3 class="heading-tertiary u-margin-bottom-small">
+                WOW! FamBank is such a life saver
+              </h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aperiam, ipsum sapiente aspernatur libero repellat quis
+                consequatur ducimus quam nisi exercitationem omnis earum qui.
+                Aperiam, ipsum sapiente aspernatur libero repellat quis
+                consequatur ducimus quam nisi exercitationem omnis earum qui.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="u-center-text u-margin-top-huge">
+          <a href="#" class="btn-text"
+            >Need Help? Chat With Our Virtual Helper &rarr;</a
+          >
+        </div>
+      </section>
+      <!-- chat bot ... -->
+      <!-- <div class="chatbot-container">
+        <div class="chatbot-header">
+          <h3>Chat with us</h3>
+          <button class="minimize-button">-</button>
+        </div>
+        <div class="chatbot-body" style="display: none">
+           Chatbot content goes here
+        </div>
+      </div> -->
+    </main>
+
+    <footer class="footer">
+      <div class="footer__logo-box">
+        <picture class="footer__logo">
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 37.5em)"
+          />
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full logo"
+            src="img/logo-green-2x.png"
+          />
+        </picture>
+      </div>
+      <div class="row">
+        <div class="col-1-of-2">
+          <div class="footer__navigation">
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a href="#" class="footer__link">Company</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Contact us</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Carrers</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Privacy policy</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Terms</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-1-of-2">
+          <p class="footer__copyright">Copyright &copy; by Ak 2023</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

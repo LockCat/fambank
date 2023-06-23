@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        />
+
+        <!--<link rel="stylesheet" href="css/icon-font.css">-->
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+        <title>FamBank | Account Page</title>
+      </head>
+      <body>
+        <div class="warningBox" id="warningBoxThree"></div>
+        <header class="accountHeader">
+          <h1 class="accountHeader__h1" id="accountPageName"></h1>
+          <nav class="accountHeader__nav">
+            <ul class="accountHeader__list">
+              <li class="accountHeader__item">
+                <a href="#" onclick="logout()">Logout</a>
+              </li>
+              <li class="accountHeader__item">
+                <a href="#" onclick="goHomeAccounts()">Accounts Page</a>
+              </li>
+              <li class="accountHeader__item dropdown hide" id="accountPageFam">
+                <a href="#">Family</a>
+                <ul>
+                  <li class="dropdown__li">
+                    <a href="#" onclick="navigateToAddFamilyMember()">
+                      Add Family Member</a
+                    >
+                  </li>
+                  <li class="dropdown__li">
+                    <a href="#"> Account Statistics</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <main>
+          <section id="home">
+            <div class="home__balance">
+              <h3>Balance:</h3>
+              <p id="accountPageBalance"></p>
+            </div>
+            <div class="credit-card">
+              <div class="credit-card__inner">
+                <div class="credit-card__front">
+                  <h2 class="credit-card__title">FamBank Credit Card</h2>
+                  <div class="credit-card__number" id="accountPageccNumber">
+                    •••• •••• •••• ••••
+                  </div>
+                  <div class="credit-card__details">
+                    <div class="credit-card__detail">
+                      <div class="credit-card__label">CardHolder Name</div>
+                      <div
+                        class="credit-card__value"
+                        id="accountPageccName"
+                      ></div>
+                    </div>
+                    <div class="credit-card__detail">
+                      <div class="credit-card__label">Expiration Date</div>
+                      <div
+                        class="credit-card__value"
+                        id="accountPageccExp"
+                      ></div>
+                    </div>
+                    <div class="credit-card__label">CVV</div>
+                    <div class="credit-card__value" id="accountPagecccvv"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="home__buttons hide" id="accountPageButtons">
+              <button
+                class="home__button btn btn--white btn--animated"
+                onclick="navigateToBills()"
+              >
+                <i class="fas fa-dollar-sign"></i>
+                Pay Bills
+              </button>
+              <button
+                class="home__button btn btn--white btn--animated"
+                onclick="navigateToDebits()"
+              >
+                <i class="fas fa-credit-card"></i>
+
+                Debit
+              </button>
+              <button
+                class="home__button btn btn--white btn--animated"
+                onclick="navigateToAllowance()"
+              >
+                <i class="fas fa-arrow-up"></i>
+                Allowance
+              </button>
+            </div>
+            <div class="home__transactions">
+              <h3>Recent Transactions:</h3>
+
+              <ul id="transactionul"></ul>
+              <a
+                class="home__view-transactions btn"
+                onclick="navigateToTransactions()"
+              >
+                View All Transactions
+              </a>
+            </div>
+          </section>
+        </main>
+        <div id="chatBotContainer" style="display: none">
+          <div id="chatBotContent"></div>
+          <input
+            type="text"
+            id="chatBotInput"
+            placeholder="Type your message"
+          />
+        </div>
+        <div id="chatBotButton">&#63;</div>
+        <script src="integration.js"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            navigateToAccount()
+          })
+          navigateToTransactions = () => {
+            const name = document.getElementById('accountPageName').innerText
+            window.location.href = `transactions.html?accId=${params.accId}&name=${name}`
+          }
+          navigateToBills = () => {
+            const name = document.getElementById('accountPageName').innerText
+            window.location.href = `paybills.html?accId=${params.accId}&name=${name}`
+          }
+          navigateToAllowance = () => {
+            const name = document.getElementById('accountPageName').innerText
+            window.location.href = `allowance.html?accId=${params.accId}&name=${name}`
+          }
+          navigateToDebits = () => {
+            const name = document.getElementById('accountPageName').innerText
+            window.location.href = `debits.html?accId=${params.accId}&name=${name}`
+          }
+          navigateToAddFamilyMember = () => {
+            const name = document.getElementById('accountPageName').innerText
+            window.location.href = `addFamilyMember.html?accId=${params.accId}&name=${name}`
+          }
+          //--------------------------------------------------------------------------------
+          //chat bot logic
+          //--------------------------------------------------------------------------------
+          const chatBotContainer = document.getElementById('chatBotContainer')
+          const chatBotButton = document.getElementById('chatBotButton')
+          const chatBotContent = document.getElementById('chatBotContent')
+          const chatBotInput = document.getElementById('chatBotInput')
+
+          // Function to toggle the chat bot visibility
+          function toggleChatBot() {
+            chatBotContainer.style.display =
+              chatBotContainer.style.display === 'none' ? 'block' : 'none'
+            if (chatBotContainer.style.display == 'block') {
+              chatBotButton.innerHTML = '&times;'
+            } else {
+              chatBotButton.innerHTML = '&#63;'
+            }
+          }
+
+          // Function to handle user input
+          async function handleUserInput() {
+            const userMessage = chatBotInput.value
+            appendMessage('You', userMessage)
+            chatBotInput.value = '' // Clear the input field
+            //add dots to indicate that the bot is typing
+            appendMessage('Chat Bot', '...')
+            // Perform any necessary logic or API calls based on the user input
+            const response = await fetch(
+              'https://bankapi-6c8a.onrender.com/api/chatbot/' +
+                params.accId +
+                '?' +
+                'text=' +
+                userMessage,
+
+              {
+                method: 'GET',
+                headers: {
+                  'Content-Type': 'application/json',
+                  Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+              }
+            )
+            const data = await response.json()
+            //remove last message (typing)
+            chatBotContent.removeChild(chatBotContent.lastChild)
+            appendMessage('Chat Bot', data.message)
+          }
+
+          // Function to append a message to the chat bot content area
+          function appendMessage(sender, message) {
+            const messageElement = document.createElement('p')
+            messageElement.style.fontSize = '1.5rem'
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`
+            chatBotContent.appendChild(messageElement)
+            chatBotContent.scrollTop = chatBotContent.scrollHeight // Scroll to the bottom
+          }
+
+          // Add event listeners
+          chatBotButton.addEventListener('click', toggleChatBot)
+          chatBotInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+              handleUserInput()
+            }
+          })
+        </script>
+      </body>
+    </html>
+  </head>
+</html>

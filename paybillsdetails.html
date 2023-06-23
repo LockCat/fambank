@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        />
+
+        <!--<link rel="stylesheet" href="css/icon-font.css">-->
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+        <title>FamBank | Pay Other Bills</title>
+      </head>
+      <body>
+        <div class="warningBox" id="warningBoxSix"></div>
+    <div class="successBox" id="successBoxBillOthers"></div>
+        <header class="accountHeader">
+          <h1 class="accountHeader__h1" id="billDetailsPageName"></h1>
+          <nav class="accountHeader__nav">
+            <ul class="accountHeader__list">
+              <li class="accountHeader__item">
+                <a href="#" onclick="goHome()">Account Home</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <section class="paybills">
+          <h2
+            class="heading-secondary"
+            style="
+              font-size: 3rem;
+              margin-top: 2rem;
+              margin-bottom: 2rem;
+              margin-left: 0;
+              margin-right: 0;
+            "
+          >
+            Pay your bill
+          </h2>
+          <!-- fix text fields width & position -->
+          <div class="paybills__form">
+              <div class="form__group paybillsdetailsform">
+                <input
+                  type="text"
+                  class="form__input"
+                  placeholder="Type"
+                  id="othersBillType"
+                  required
+                />
+                <label for="othersType" class="form__label">Type</label>
+              </div>
+              <div class="form__group paybillsdetailsform">
+                <input
+                  type="text"
+                  class="form__input"
+                  placeholder="Bill Number"
+                  id="othersBillNumber"
+                  required
+                />
+                <label for="othersBillNumber" class="form__label"
+                  >Bill Number</label
+                >
+              </div>
+              <div class="form__group paybillsdetailsform">
+                <input
+                  type="text"
+                  class="form__input"
+                  placeholder="Amount"
+                  id="othersAmount"
+                  required
+                />
+                <label for="othersAmount" class="form__label">Amount</label>
+              </div>
+              <!-- style this class="form__label"-->
+              <div class="paybillsdetailsdiv" style="margin-bottom: 2rem">
+                <input
+                  class="paybillsdetailsdivcheckbox"
+                  type="checkbox"
+                  id="othersAutomaticPayment"
+                  name="automatic-payment"
+                />
+                <label for="othersAutomaticPayment" class="paybillsdetailsdivlabel"
+                  >Automatic Monthly Payment</label
+                >
+              </div>
+              <!-- put this in center -->
+              <div class="form__group">
+                <button class="btn btn--green" id="others" onclick="payBill('others')">Submit &rarr;</button>
+                <button class="btn btn--green" onclick="backToBills()">Back &rarr;</button>
+              </div>
+          </div>
+        </section>
+        <script src="integration.js"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const name = document.getElementById('billDetailsPageName')
+            name.innerHTML = params.name
+          })
+          function backToBills(){
+            window.location.href = `paybills.html?accId=${params.accId}&name=${params.name}`
+          }
+        </script>
+      </body>
+    </html>
+  </head>
+</html>

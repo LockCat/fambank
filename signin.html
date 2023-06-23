@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="integration.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!--<link rel="stylesheet" href="css/icon-font.css">-->
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>FamBank | Sign In</title>
+  </head>
+  <body>
+    <header>
+      <!-- Navigation menu or logo can go here -->
+    </header>
+
+    <main>
+      <div class="header__logo-box">
+        <a href="index.html">
+          <img src="img/logo-white.png" alt="Logo" class="header__logo" />
+        </a>
+      </div>
+      <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
+
+        <label for="navi-toggle" class="navigation__button">
+          <span class="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div class="navigation__background">&nbsp;</div>
+
+        <nav class="navigation__nav">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a href="index.html#section-about" class="navigation__link"
+                ><span></span>About FamBank</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a href="index.html#section-features" class="navigation__link"
+                ><span></span>Your benefits</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a href="index.html#section-packages" class="navigation__link"
+                ><span></span>Popular Packages</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a href="index.html#section-stories" class="navigation__link"
+                ><span></span>Reviews</a
+              >
+            </li>
+            <li class="navigation__item">
+              <a href="signup.html" class="navigation__link"
+                ><span></span>Sign Up
+              </a>
+            </li>
+            <li class="navigation__item">
+              <a href="signin.html" class="navigation__link"
+                ><span></span>Sign In</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <section class="section-book">
+        <div class="row">
+          <div class="book">
+            <div class="book__form">
+              <div class="u-margin-bottom-medium">
+                <h2 class="heading-secondary">Welcome Back</h2>
+              </div>
+              <form onsubmit="event.preventDefault();">
+                <div class="form__group">
+                  <input
+                    type="text"
+                    class="form__input"
+                    placeholder="Email address"
+                    id="emailOrPhone"
+                    required
+                  />
+                  <label for="email" class="form__label">Email address</label>
+                </div>
+
+                <div class="form__group">
+                  <input
+                    type="password"
+                    class="form__input"
+                    placeholder="Password"
+                    id="password"
+                    required
+                  />
+                  <label for="password" class="form__label">Password</label>
+                </div>
+
+                <div id="warningBox" class="warningBox"></div>
+
+                <!-- styles are extra here to fix positioning of submit button -->
+                <div class="form__group">
+                  <button class="btn btn--green" onclick="handleLogin()">
+                    Submit &rarr;
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__logo-box">
+        <picture class="footer__logo">
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 37.5em)"
+          />
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full logo"
+            src="img/logo-green-2x.png"
+          />
+        </picture>
+      </div>
+      <div class="row">
+        <div class="col-1-of-2">
+          <div class="footer__navigation">
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a href="#" class="footer__link">Company</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Contact us</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Carrers</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Privacy policy</a>
+              </li>
+              <li class="footer__item">
+                <a href="#" class="footer__link">Terms</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-1-of-2">
+          <p class="footer__copyright">Copyright &copy; by Ak 2023</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
