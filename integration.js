@@ -21,7 +21,9 @@ async function handleLogin() {
     if (email.trim() === '' || password.trim() === '') {
       return false // Prevent the form submission
     }
-
+    const loading = document.getElementById('loadingBox')
+    loading.style.display = 'block'
+    loading.textContent = 'Loading...'
     const response = await fetch(
       'https://bankapi-6c8a.onrender.com/api/login',
       {
@@ -34,6 +36,7 @@ async function handleLogin() {
     )
 
     const data = await response.json()
+    loading.style.display = 'none'
     if (data.status == true) {
       const token = data.token
       localStorage.setItem('token', token)
@@ -73,6 +76,9 @@ async function handleSignUp() {
     ) {
       return false
     }
+    const loading = document.getElementById('loadingBox2')
+    loading.style.display = 'block'
+    loading.textContent = 'Loading...'
     const response = await fetch(
       'https://bankapi-6c8a.onrender.com/api/signup',
       {
@@ -90,6 +96,7 @@ async function handleSignUp() {
       }
     )
     const data = await response.json()
+    loading.style.display = 'none'
     if (data.status == false) {
       throw new Error(data.message)
     }
