@@ -13,7 +13,6 @@ FamBank is a user-friendly banking website that allows users to create accounts,
 
 - HTML, CSS, JavaScript (Vanilla JS)
 - Fambank API (Backend) - [Link to Fambank API Repository](https://github.com/akvnn/bankAPI)
-- Bootstrap (Frontend UI Framework)
 
 ## Credits
 
